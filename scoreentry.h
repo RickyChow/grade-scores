@@ -12,7 +12,15 @@ public:
 
 	ScoreEntry();
 
+	/** operator< for score entry
+	*	@return True if LHS is smaller than RHS
+	*	precedence is score, lastname, firstname
+	*/
 	bool operator<(const ScoreEntry& other) const;
+	
+	/** operator== for score entry
+	*	@return True if LHS == RHS
+	*/
 	bool operator==(const ScoreEntry& other) const;
 
 	void setFirstName(const std::string& firstName);

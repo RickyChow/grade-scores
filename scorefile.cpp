@@ -26,6 +26,7 @@ bool ScoreFile::loadEntries()
 	string line;
 	while (getline(file, line))
 	{
+		//Remove any spaces in the current line
 		line.erase(remove_if(line.begin(), line.end(), isspace), line.end());
 
 		istringstream iss(line);
@@ -34,6 +35,7 @@ bool ScoreFile::loadEntries()
 		for (int i = 0; i < 3; ++i)
 		{
 			string token;
+			//Split string by comma
 			getline(iss, token, ',');
 			switch (i)
 			{
@@ -74,6 +76,9 @@ bool ScoreFile::saveFile()
 std::string ScoreFile::outputFilename() const
 {
 	string outFileName = _filename;
+
+	//Add output extension to the end of filename
 	outFileName.insert(outFileName.find_last_of('.'), FINISHED_EXT);
+
 	return outFileName;
 }

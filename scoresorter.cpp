@@ -4,6 +4,7 @@
 
 bool ScoreSorter::sort()
 {
+	//Use algorithm sort to sort entries
 	std::sort(_entries.rbegin(), _entries.rend());
 	return true;
 }
